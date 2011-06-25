@@ -1,18 +1,21 @@
 {
-  "name": "apiary",
-  "description": "Spawn multi-system multi-user node.js clouds, on your own hardware and/or with 3rd party virtual servers",
-  "version": "0.0.1",
-  "author": "Tolsma Telematica Consultancy <code at tolsma.net>, Sander Tolsma <sander at tolsma.net>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stolsma/apiary"
-  },
-  "keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
-  "dependencies": {
-    "haibu": "0.2.5"
-  },
-  "main": "./lib/apiary",
-  "bin": {
-  },
-  "engines": { "node": "0.4.x || 0.5.x" }
+	"name": "apiary",
+	"description": "Spawn multi-system multi-user node.js clouds, on your own hardware and/or with 3rd party virtual servers",
+	"version": "0.0.1",
+	"author": "Tolsma Telematica Consultancy <code at tolsma.net>, Sander Tolsma <sander at tolsma.net>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stolsma/apiary"
+	},
+	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
+	"dependencies": {
+		"haibu": "0.2.5",
+		"dnode-protocol": ">=0.0.10 <0.1"	
+	},
+	"main": "./lib/apiary",
+	"bin": {
+	},
+	"engines": {
+		"node": "0.4.x || 0.5.x"
+	}
 }
