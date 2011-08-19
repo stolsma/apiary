@@ -9,10 +9,12 @@
 	},
 	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
 	"dependencies": {
+		"eventemitter2": "0.4.x",
 		"forever": "0.6.x",
 		"haibu": "0.3.x",
 		"haibu-carapace": "0.2.x >=0.2.4",
-		"hook.io": "0.6.x >=0.6.0"
+		"hook.io": "0.6.x >=0.6.0",
+		"optimist": "0.2.x"
 	},
 	"main": "./lib/apiary",
 	"bin": {

@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+
+var util = require('util'),
+    argv = require('optimist').argv,
+    apiary = require('../lib/apiary');
+
+var app1 = {
+		"user": "haibu_user_1",
+		"name": "test",
+		"domain": "devjitsu.com",
+		"repository": {
+			"type": "git",
+			"url": "https://github.com/Marak/hellonode.git",
+		},
+		"scripts": {
+			"start": "server.js"
+		}
+	};
+var app2 = {
+		"user": "haibu_user_2",
+		"name": "test",
+		"domain": "devjitsu.com",
+		"repository": {
+			"type": "git",
+			"url": "https://github.com/Marak/hellonode.git",
+		},
+		"scripts": {
+			"start": "server.js"
+		}
+	};
+
+var help = [
+    'usage: apiary [options]',
+    '',
+    'Starts the apiary server responsible for controlling multiple user Haibu and spawning node.js applications.',
+    '',
+    'options:',
+    '  -a             IP Address that you want the server to bind to  [dynamic]',
+    '  -e [env]       The environment to the specified command in     [development]',
+    '  -s --silent    Suppress the log messages from the output',
+    '  -h, --help     You\'re staring at it',
+].join('\n');
+
+if (argv.h || argv.help) {
+  return util.puts(help);
+}
+
+
+/**
+ * Start apiary and configured apps...
+ */
+apiary.init();
+
+// TODO: test startups of an SRE. Wil be replaced later with correct code!!!
+apiary.startSre({user: 'haibu_user_1'}, function(err, result){
+	if (err) {
+		console.error(err);
+		return;
+	}
+	
+	apiary.startApp(app1, function(err, result) {
+		if (err) {
+			console.error(err);
+			return;
+		}
+	})
+});
+
+apiary.startSre({user: 'haibu_user_2'}, function(err, result){
+	if (err) {
+		console.error(err);
+		return;
+	}
+	
+	apiary.startApp(app2, function(err, result) {
+		if (err) {
+			console.error(err);
+			return;
+		}
+	})
+});
