@@ -52,13 +52,13 @@ if (argv.h || argv.help) {
 apiary.init();
 
 // TODO: test startups of an SRE. Wil be replaced later with correct code!!!
-apiary.startSre({user: 'haibu_user_1'}, function(err, result){
+apiary.sc.startSre({user: 'haibu_user_1'}, function(err, result){
 	if (err) {
 		console.error(err);
 		return;
 	}
 	
-	apiary.startApp(app1, function(err, result) {
+	apiary.sc.startApp(app1, function(err, result) {
 		if (err) {
 			console.error(err);
 			return;
@@ -66,13 +66,13 @@ apiary.startSre({user: 'haibu_user_1'}, function(err, result){
 	})
 });
 
-apiary.startSre({user: 'haibu_user_2'}, function(err, result){
+apiary.sc.startSre({user: 'haibu_user_2'}, function(err, result){
 	if (err) {
 		console.error(err);
 		return;
 	}
 	
-	apiary.startApp(app2, function(err, result) {
+	apiary.sc.startApp(app2, function(err, result) {
 		if (err) {
 			console.error(err);
 			return;
