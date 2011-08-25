@@ -9,6 +9,7 @@
 	},
 	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
 	"dependencies": {
+		"async": "0.1.x",
 		"clip": "0.1.x",
 		"colors": "0.5.x",
 		"eventemitter2": "0.4.x",

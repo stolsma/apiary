@@ -1,23 +1,11 @@
 #!/usr/bin/env node
 
-var clip = require('clip');
+var clip = require('clip'),
+	app = new clip();
 
-var app = new clip();
-
-app.config('.apiaryconf', {
-	flags: ['c', 'conf'],
-	defaults: {
-		port: 4000,		// TODO: change when System Controller API port is known
-		address: '127.0.0.1'
-	}
-});
-
-app.flag(['s', 'silent'], function(cmd, tty, next) {
-	tty.remove(tty.transports.Console);
-})
-
+require('../lib/cli')(app);
+require('../lib/cli/system')(app);
 require('../lib/cli/config')(app);
 require('../lib/cli/apps')(app);
-require('../lib/cli')(app);
 
 app.run();
