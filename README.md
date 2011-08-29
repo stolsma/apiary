@@ -1,18 +1,18 @@
 # apiary
 
-*spawn multi-system multi-user node.js clouds, on your own hardware and/or with 3rd party virtual servers*
+*spawn multi-system multi-user [Node.JS] clouds, on your own hardware and/or with 3rd party virtual servers*
 
 # What is apiary?
 
-Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning and managing several multi-user node.js applications on multiple (physical or virtual) servers. 
+Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning and managing several multi-user [Node.JS] applications on multiple (physical or virtual) servers. 
 
 # How does it work?
 
-`apiary` (which is English for 'beehive area') creates per (virtual) system per user application hives (or haibu). By using [haibu] (which is Japanese for "hive"), node.js applications are transformed into "drones". This approach allows `apiary` and [haibu] to directly interact with node.js applications and add all sorts of additional functionality.
+`apiary` (which is English for 'beehive area') creates per (virtual) system per user application hives (or haibu). By using [haibu] (which is Japanese for "hive"), [Node.JS] applications are transformed into "drones". This approach allows `apiary` and [haibu] to directly interact with [Node.JS] applications and add all sorts of additional functionality.
 
-`apiary` builds on the concept of "drones" used in [haibu] and exposes a robust and granular API for interacting with your and others node.js applications acros multiple (virtual) systems. At a low level, the API of `apiary` is exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP requests can communicate with `apiary` System Controllers and installed applications. If you are working in [Node.JS], `apiary` comes with a high-level [Node.JS] API client.
+`apiary` builds on the concept of "drones" used in [haibu] and exposes a robust and granular API for interacting with your and others [Node.JS] applications acros multiple (virtual) systems. At a low level, the API of `apiary` is exposed as a RESTFul HTTP webservice. Any system that supports basic HTTP requests can communicate with `apiary` System Environment Controllers and installed applications. If you are working in [Node.JS], `apiary` comes with a high-level [Node.JS] System Environment Controller API client.
 
-## Where can I run `apiary`?
+## Where can I run apiary?
 
 `apiary` doesn't discriminate. If your environment supports [Node.JS], you can install `apiary` and start up your own multi-system multi-user [Node.JS] cloud. This makes `apiary` an ideal tool for both development purposes and production usage since you can seamlessly setup `apiary` on your local machine, on utility computing providers (such as Amazon EC2 or Rackspace), on dedicated servers, or even on a mobile phone!
 
@@ -20,9 +20,11 @@ Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning a
 
     sudo npm install apiary -g
 
-# Documentation
+# Code documentation
 
-The documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
+The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
+
+A first preview can be found [here](https://github.com/stolsma/apiary/tree/master/docs)!
 
 # An overview of using apiary
 
@@ -39,7 +41,7 @@ Especially many thanks to the [Nodejitsu] people for writing such nice code ([ha
 
 Main projects that we use as building blocks:
 
-  * [async] by [fjakobs]
+  * [async] by [caolan]
   * [clip] by [bmeck]
   * [colors] by [marak]
   * [dnode] by [substack]
@@ -50,7 +52,7 @@ Main projects that we use as building blocks:
   * [haibu-carapace] by [Nodejitsu]
   * [hook.io] by [marak] and others [hookio]
   * [nconf] by [indexzero]
-  * [optimist by [substack]
+  * [optimist] by [substack]
   * and of course [Node.JS]!
   
 Thanks to all developers and contributors of these projects! 
