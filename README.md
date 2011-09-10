@@ -271,4 +271,4 @@ THE SOFTWARE.
 [nconf]: https://github.com/indexzero/nconf
 [optimist]: https://github.com/substack/node-optimist
 [Node.JS]: http://nodejs.org/
-[vows]: [0]: http://vowsjs.org
+[vows]: http://vowsjs.org
