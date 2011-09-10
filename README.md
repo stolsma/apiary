@@ -30,7 +30,155 @@ A first preview can be found [here](https://github.com/stolsma/apiary/tree/maste
 
 ## Starting up an `apiary` environment
 
-(to be described)
+To start an apiary system:
+
+`[sudo] apiary start`
+
+to stop a running apairy system:
+
+`[sudo] apiary stop`
+
+### Using the apiary CLI
+
+To start an application:
+
+`[sudo] apiary -f examples/deploy.json apps start'
+
+To stop an application:
+
+`[sudo] apiary -f examples/deploy.json apps stop'
+
+(to be described further)
+
+### deploy.json attribute settings
+
+Apiary uses a .json formated file in order to determine what to deploy.
+Also, apiary is a pull based server; this means that it will pull files from outside of the server in order to deploy instead of using uploading directly into the process.
+
+A basic deploy.json for a node.js application on apiary:
+
+```json
+{
+   "user": "marak",
+   "name": "test",
+   "domain": "devjitsu.com",
+   "repository": {
+     "type": "git",
+     "url": "https://github.com/Marak/hellonode.git",
+   },
+   "scripts": {
+     "start": "server.js"
+   }
+}
+```
+
+####Name
+
+The name attribute is required and will represent the name of the application being deployed.
+
+```json
+{
+  "name": "app-name"
+}
+```
+
+####User
+
+The user attribute is required and will represent the user who started up a drone.
+
+```json
+{
+  "user": "myusername"
+}
+```
+
+####Repositories
+
+##### git
+
+This type of repository will pull a git repository into haibu and deploy its contents.
+
+```json
+{
+  "repository": {
+    "type": "git",
+    "url": "http://path/to/git/server"
+  }
+}
+```
+
+##### local
+
+This type of repository will pull a directory relative to the `haibu-server` and deploy its contents.
+
+```json
+{
+  "repository": {
+    "type": "local",
+    "directory": "/path/to/application"
+  }
+}
+```
+
+##### tar
+
+This type of repository will pull a remote archive relative to the `haibu-server` and deploy its contents.
+
+```json
+{
+  "repository": {
+    "type": "tar",
+    "url": "http://path/to/archive.tar"
+  }
+}
+```
+
+##### zip
+
+This type of repository will pull a remote archive relative to the `haibu-server` and deploy its contents.
+
+```json
+{
+  "repository": {
+    "type": "zip",
+    "url": "http://path/to/archive.zip"
+  }
+}
+```
+
+##### npm
+
+This type of repository will install a npm package as application. The package will be available as directory under its name and the scripts will be installed in the `.bin` directory.
+So scripts.start should have one of both as relative directory:
+
+```json
+"scripts": {
+  "start": ".bin/server.js"
+}
+```
+
+or:
+
+```json
+"scripts": {
+  "start": "name of npm package/server.js"
+}
+```
+
+```json
+{
+  "repository": {
+    "type": "npm",
+    "package": "name of npm package following package.json dependencies rules"
+  }
+}
+```
+
+
+## Run Tests
+All of the `apiary` tests are written in [vows][0], and cover all of the use cases described above.
+
+(To be implemented)
 
 
 Open Source Projects Used
