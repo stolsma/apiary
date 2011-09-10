@@ -18,13 +18,7 @@ Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning a
 
 # Installation (to be implemented)
 
-    sudo npm install apiary -g
-
-# Code documentation
-
-The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
-
-A first preview can be found [here](https://github.com/stolsma/apiary/tree/master/docs)!
+`sudo npm install apiary -g`
 
 # An overview of using apiary
 
@@ -42,33 +36,44 @@ to stop a running apairy system:
 
 To start an application:
 
-`[sudo] apiary -f examples/deploy.json apps start'
+`[sudo] apiary -f examples/deploy.json apps start`
 
 To stop an application:
 
-`[sudo] apiary -f examples/deploy.json apps stop'
+`[sudo] apiary -f examples/deploy.json apps stop`
 
 (to be described further)
 
 ### deploy.json attribute settings
 
 Apiary uses a .json formated file in order to determine what to deploy.
-Also, apiary is a pull based server; this means that it will pull files from outside of the server in order to deploy instead of using uploading directly into the process.
+Also, `apiary` is a pull based server; this means that it will pull files from outside of the server in order to deploy instead of using uploading directly into the process.
 
 A basic deploy.json for a node.js application on apiary:
 
 ```json
 {
-   "user": "marak",
+   "user": "apiary_user_1",
    "name": "test",
-   "domain": "devjitsu.com",
+   "domain": "example.com",
    "repository": {
      "type": "git",
-     "url": "https://github.com/Marak/hellonode.git",
+     "url": "https://github.com/stolsma/hellonode.git",
    },
    "scripts": {
      "start": "server.js"
    }
+}
+```
+
+#### User
+
+The user attribute is optional and will represent the system user which will own the application.
+If not defined then the default system user setting of the `apiary` CLI will be used.
+
+```json
+{
+  "user": "system user"
 }
 ```
 
@@ -82,34 +87,28 @@ The name attribute is required and will represent the name of the application be
 }
 ```
 
-####User
-
-The user attribute is required and will represent the user who started up a drone.
-
-```json
-{
-  "user": "myusername"
-}
-```
-
 ####Repositories
+
+Five repository types are supported.
 
 ##### git
 
-This type of repository will pull a git repository into haibu and deploy its contents.
+This type of repository will pull a git repository into `apiary` and deploy its contents.
+The branch attribute is optional!
 
 ```json
 {
   "repository": {
     "type": "git",
-    "url": "http://path/to/git/server"
+    "url": "http://path/to/git/server",
+	"branch": "branch name"
   }
 }
 ```
 
 ##### local
 
-This type of repository will pull a directory relative to the `haibu-server` and deploy its contents.
+This type of repository will pull a directory from the local file system into `apiary` and deploy its contents.
 
 ```json
 {
@@ -122,7 +121,7 @@ This type of repository will pull a directory relative to the `haibu-server` and
 
 ##### tar
 
-This type of repository will pull a remote archive relative to the `haibu-server` and deploy its contents.
+This type of repository will pull a remote tar archive into the `apiary` system and deploy its contents.
 
 ```json
 {
@@ -135,7 +134,7 @@ This type of repository will pull a remote archive relative to the `haibu-server
 
 ##### zip
 
-This type of repository will pull a remote archive relative to the `haibu-server` and deploy its contents.
+This type of repository will pull a remote zip archive to the `apiary` system and deploy its contents.
 
 ```json
 {
@@ -175,8 +174,16 @@ or:
 ```
 
 
+# Code documentation
+
+The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
+
+A first preview can be found [here](https://github.com/stolsma/apiary/blob/master/docs/index.md)!
+
 ## Run Tests
-All of the `apiary` tests are written in [vows][0], and cover all of the use cases described above.
+All of the `apiary` tests are written in [vows], and cover all of the use cases described above.
+
+the tests can be started by typing `npm test` in the `apiary` directory.  
 
 (To be implemented)
 
@@ -204,31 +211,6 @@ Main projects that we use as building blocks:
   * and of course [Node.JS]!
   
 Thanks to all developers and contributors of these projects! 
-
-[bmeck]: https://github.com/bmeck
-[caolan]: https://github.com/caolan
-[cloudhead]: https://github.com/cloudhead
-[hij1nx]: https://github.com/hij1nx
-[hookio]: https://github.com/hookio
-[indexzero]: https://github.com/indexzero
-[marak]: https://github.com/Marak
-[Nodejitsu]: http://nodejitsu.com
-[substack]: https://github.com/substack
-
-[async]: https://github.com/caolan/async
-[clip]: https://github.com/bmeck/clip
-[colors]: https://github.com/Marak/colors.js
-[dnode]: https://github.com/substack/dnode
-[eventemitter2]: https://github.com/hij1nx/EventEmitter2
-[eyes]: https://github.com/cloudhead/eyes.js
-[forever]: https://github.com/indexzero/forever
-[haibu]: https://github.com/nodejitsu/haibu
-[haibu-carapace]: https://github.com/nodejitsu/haibu-carapace
-[hook.io]: https://github.com/hookio/hook.io
-[nconf]: https://github.com/indexzero/nconf
-[optimist]: https://github.com/substack/node-optimist
-[Node.JS]: http://nodejs.org/
-
 
 Documentation License
 =====================
@@ -264,3 +246,29 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+[bmeck]: https://github.com/bmeck
+[caolan]: https://github.com/caolan
+[cloudhead]: https://github.com/cloudhead
+[hij1nx]: https://github.com/hij1nx
+[hookio]: https://github.com/hookio
+[indexzero]: https://github.com/indexzero
+[marak]: https://github.com/Marak
+[Nodejitsu]: http://nodejitsu.com
+[substack]: https://github.com/substack
+
+[async]: https://github.com/caolan/async
+[clip]: https://github.com/bmeck/clip
+[colors]: https://github.com/Marak/colors.js
+[dnode]: https://github.com/substack/dnode
+[eventemitter2]: https://github.com/hij1nx/EventEmitter2
+[eyes]: https://github.com/cloudhead/eyes.js
+[forever]: https://github.com/indexzero/forever
+[haibu]: https://github.com/nodejitsu/haibu
+[haibu-carapace]: https://github.com/nodejitsu/haibu-carapace
+[hook.io]: https://github.com/hookio/hook.io
+[nconf]: https://github.com/indexzero/nconf
+[optimist]: https://github.com/substack/node-optimist
+[Node.JS]: http://nodejs.org/
+[vows]: [0]: http://vowsjs.org
