@@ -20,12 +20,6 @@ Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning a
 
     sudo npm install apiary -g
 
-# Code documentation
-
-The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
-
-A first preview can be found [here](https://github.com/stolsma/apiary/tree/master/docs)!
-
 # An overview of using apiary
 
 ## Starting up an `apiary` environment
@@ -42,18 +36,18 @@ to stop a running apairy system:
 
 To start an application:
 
-`[sudo] apiary -f examples/deploy.json apps start'
+`[sudo] apiary -f examples/deploy.json apps start`
 
 To stop an application:
 
-`[sudo] apiary -f examples/deploy.json apps stop'
+`[sudo] apiary -f examples/deploy.json apps stop`
 
 (to be described further)
 
 ### deploy.json attribute settings
 
 Apiary uses a .json formated file in order to determine what to deploy.
-Also, apiary is a pull based server; this means that it will pull files from outside of the server in order to deploy instead of using uploading directly into the process.
+Also, `apiary` is a pull based server; this means that it will pull files from outside of the server in order to deploy instead of using uploading directly into the process.
 
 A basic deploy.json for a node.js application on apiary:
 
@@ -72,6 +66,17 @@ A basic deploy.json for a node.js application on apiary:
 }
 ```
 
+#### User
+
+The user attribute is optional and will represent the system user which will own the application.
+If not defined then the default system user of the `apiary` CLI will be used.
+
+```json
+{
+  "user": "system user"
+}
+```
+
 ####Name
 
 The name attribute is required and will represent the name of the application being deployed.
@@ -82,34 +87,28 @@ The name attribute is required and will represent the name of the application be
 }
 ```
 
-####User
-
-The user attribute is required and will represent the user who started up a drone.
-
-```json
-{
-  "user": "myusername"
-}
-```
-
 ####Repositories
+
+Five repository types are supported.
 
 ##### git
 
-This type of repository will pull a git repository into haibu and deploy its contents.
+This type of repository will pull a git repository into `apiary` and deploy its contents.
+The branch attribute is optional!
 
 ```json
 {
   "repository": {
     "type": "git",
-    "url": "http://path/to/git/server"
+    "url": "http://path/to/git/server",
+	"branch": "branch name"
   }
 }
 ```
 
 ##### local
 
-This type of repository will pull a directory relative to the `haibu-server` and deploy its contents.
+This type of repository will pull a directory from the local file system into `apiary` and deploy its contents.
 
 ```json
 {
@@ -122,7 +121,7 @@ This type of repository will pull a directory relative to the `haibu-server` and
 
 ##### tar
 
-This type of repository will pull a remote archive relative to the `haibu-server` and deploy its contents.
+This type of repository will pull a remote tar archive into the `apiary` system and deploy its contents.
 
 ```json
 {
@@ -135,7 +134,7 @@ This type of repository will pull a remote archive relative to the `haibu-server
 
 ##### zip
 
-This type of repository will pull a remote archive relative to the `haibu-server` and deploy its contents.
+This type of repository will pull a remote zip archive to the `apiary` system and deploy its contents.
 
 ```json
 {
@@ -174,6 +173,12 @@ or:
 }
 ```
 
+
+# Code documentation
+
+The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
+
+A first preview can be found [here](https://github.com/stolsma/apiary/tree/master/docs)!
 
 ## Run Tests
 All of the `apiary` tests are written in [vows][0], and cover all of the use cases described above.
