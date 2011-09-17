@@ -16,7 +16,7 @@
 		"eventemitter2": "0.4.x",
 		"eyes": "0.1.x",
 		"forever": "0.6.x",
-		"haibu": "git://github.com/stolsma/haibu.git#repository-plugin",
+		"haibu": "0.4.x >=0.4.4",
 		"haibu-carapace": "0.2.x >=0.2.4",
 		"hook.io": "0.6.x >=0.6.0",
 		"nconf": "0.3.x",
