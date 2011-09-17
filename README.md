@@ -176,7 +176,7 @@ or:
 
 # Code documentation
 
-The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to get acclimated with `apiary`.
+The code documentation of `apiary` is still very much a work in progress. We'll be actively updating the documentation in the upcoming months to make it easier to contribute code to `apiary`.
 
 A first preview can be found [here](https://github.com/stolsma/apiary/blob/master/docs/index.md)!
 
