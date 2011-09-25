@@ -19,13 +19,16 @@
 		"haibu": "0.4.x >=0.4.4",
 		"haibu-carapace": "0.2.x >=0.2.4",
 		"hook.io": "0.6.x >=0.6.0",
+		"mkdirp": "0.0.x",
 		"nconf": "0.3.x",
-		"optimist": "0.2.x"
+		"optimist": "0.2.x",
+		"rimraf": "1.0.x"
 	},
 	"main": "./lib/apiary",
 	"bin": {
+		"apiary": "./bin/apiary"
 	},
 	"engines": {
-		"node": "0.4.x || 0.5.x"
+		"node": "0.4.x"
 	}
 }
