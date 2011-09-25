@@ -1,16 +1,6 @@
 { 
 	"name": "test",
-	"domains": [
-		"test1.tolsma.net",
-		"test2.tolsma.net",
-		"test3.tolsma.net"
-	],
-	"sng": [{
-		"type": "http",
-		"host": "test.devjitsu.com",
-		"port": 80		
-	}],
-	"service": [],
+	"domain": "devjitsu.com",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Marak/hellonode.git"
