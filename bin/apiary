@@ -5,6 +5,7 @@ var clip = require('clip'),
 
 require('../lib/cli')(app);
 require('../lib/cli/system')(app);
+require('../lib/cli/users')(app);
 require('../lib/cli/apps')(app);
 require('../lib/cli/config')(app);
 
