@@ -116,7 +116,7 @@ To stop apps from, and remove an Apiary user and also clean the users filesystem
 
 `[sudo] apiary users clean apiary_user_1`
  
-### Using the apiary CLI
+### App configuration
 
 To start an application described by examples/deploy.json:
 
