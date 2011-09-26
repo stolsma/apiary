@@ -20,29 +20,59 @@ Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning a
 
 `sudo npm install apiary -g`
 
-# An overview of using apiary
+# An overview of using Apiary
+
+All CLI interaction has to be done as a user with root rights. On most Linux systems a suser can be 'upgraded' with root rights by using sudo... 
 
 ## Starting up an `apiary` environment
 
-To start an apiary system:
+To start an Apiary system:
 
 `[sudo] apiary start`
 
-to stop a running apairy system:
+to stop a running Apairy system:
 
 `[sudo] apiary stop`
 
+### User configuration
+
+To add a system user as an Apiary user:
+
+`[sudo] apiary users add apiary_user_1`
+
+To remove an Apiary user:
+
+`[sudo] apiary users remove apiary_user_1`
+
+To list all users configured on the Apiary system:
+
+`[sudo] apiary users list`
+
+To stop apps from, and remove an Apiary user and also clean the users filesystem of Apiary directories and files:
+
+`[sudo] apiary users clean apiary_user_1`
+ 
 ### Using the apiary CLI
 
 To start an application:
 
-`[sudo] apiary -f examples/deploy.json apps start`
+`[sudo] apiary -f examples/deploy.json -u apiary_user_1 apps start`
 
 To stop an application:
 
-`[sudo] apiary -f examples/deploy.json apps stop`
+`[sudo] apiary -f examples/deploy.json -u apiary_user_1 apps stop`
 
-(to be described further)
+To list all running applications:
+
+`[sudo] apiary apps list`
+
+To list all running applications for a specific user:
+
+`[sudo] apiary apps list apiary_user_1`
+
+To clean the user filesystem from all files related to a running app (and stop the app):
+
+`[sudo] apiary -u apiary_user_1 apps clean test`
 
 ### deploy.json attribute settings
 

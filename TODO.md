@@ -6,6 +6,5 @@ Things to develop (in no particular order):
   * Aditional documentation on architecture
   * Creation of system Network Gateway's. First to implement is http-proxy!
   * Implementation of System Service Environment (SSE) with system services like MySQL, Postgres, mDNS, Bonjour, uPnP for use by all user SRE services!!
-  * Add startup script which deamonizes the apiary System controller and gives possibilities to control the apiary deamon from the CLI. Commands like: save config, restart, stop, start
   * Add REST interface to the System Controller
   * Add examples
