@@ -1,6 +1,6 @@
 {
    "name": "cloud9",
-   "domain": "cloud9.tolsma.net",
+   "domain": "cloud9.localhost",
    "repository": {
      "type": "git",
      "url": "https://github.com/ajaxorg/cloud9.git"
@@ -8,8 +8,8 @@
    "scripts": {
      "start": "bin/cloud9.js",
      "arguments": [
-       "-w",
-       "%h"
+       "-w", "%h",
+	   "-l", "::0"
      ]
    }
 }
