@@ -1,11 +1,28 @@
 { 
 	"name": "test",
-	"domain": "devjitsu.com",
+	"domains": [
+		"test1.tolsma.net",
+		"test2.tolsma.net",
+		"test3.tolsma.net"
+	],
+	"sng": [{
+		"type": "http",
+		"address": "::0",
+		"port": 80
+	}],
+	"service": [],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Marak/hellonode.git"
+		"url": "https://github.com/stolsma/hellonode.git"
 	},
 	"scripts": {
-		"start": "server.js"
+		"start": "server.js",
+		"arguments": [
+			"-w", "firstwarg",
+			"-h", "%h",
+			"-a", "%a",
+			"-c", "%c",
+			"-o", "%o"
+		]
 	}
 }
