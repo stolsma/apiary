@@ -21,6 +21,10 @@ Those blocks as talking to each other through IP connections.
 
 ![System Environment Design](https://github.com/stolsma/apiary/raw/master/docs/resources/SystemEnvironmentArchitecture.jpg "System Environment Design")  
 
+### Communication Architecture Design
+
+![Communication Architecture Design](https://github.com/stolsma/apiary/raw/master/docs/resources/CommunicationArchitecture.jpg "Communication Architecture Design")  
+
 ### System Service Environment
 
 The System Environment also has standard System Services running (SS) in the System Service Environment like a HTTP/HTTPS/WEBSOCKET proxy 
