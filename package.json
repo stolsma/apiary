@@ -10,7 +10,7 @@
 	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
 	"dependencies": {
 		"async": "0.1.x",
-		"clip": "0.1.4",
+		"clip": "0.1.x >=0.1.6",
 		"colors": "0.5.x",
 		"dnode": "0.7.x",
 		"dnode-protocol": "0.0.10",
