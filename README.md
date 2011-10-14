@@ -2,6 +2,8 @@
 
 *spawn multi-system multi-user [Node.JS] clouds, on your own hardware and/or with 3rd party virtual servers*
 
+### Under development!!! Not stable yet!!!
+
 # What is apiary?
 
 Apiary is the open-source project that uses [Node.JS] and [haibu] for spawning and managing several multi-user [Node.JS] applications on multiple (physical or virtual) servers. 
