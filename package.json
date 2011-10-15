@@ -20,7 +20,7 @@
 		"haibu-carapace": "0.2.x >=0.2.4",
 		"hook.io": "0.6.x >=0.6.0",
 		"http-proxy": "0.7.x",
-		"intercom": "0.1.1",
+		"intercom": "0.1.x >=0.1.3",
 		"mkdirp": "0.0.x",
 		"nconf": "0.4.x",
 		"optimist": "0.2.x",
