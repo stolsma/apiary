@@ -10,7 +10,7 @@
 	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
 	"dependencies": {
 		"async": "0.1.x",
-		"clip": "0.1.x >=0.1.6",
+		"clip": "git://github.com/stolsma/clip.git#nconf",
 		"colors": "0.5.x",
 		"dnode": "0.7.x",
 		"eventemitter2": "0.4.x",
@@ -22,9 +22,10 @@
 		"http-proxy": "0.7.x",
 		"intercom": "0.1.1",
 		"mkdirp": "0.0.x",
-		"nconf": "0.3.x",
+		"nconf": "0.4.x",
 		"optimist": "0.2.x",
-		"rimraf": "1.0.x"
+		"rimraf": "1.0.x",
+		"winston": "0.5.x"
 	},
 	"main": "./lib/apiary",
 	"bin": {
