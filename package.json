@@ -1,13 +1,21 @@
 {
 	"name": "apiary",
 	"description": "Spawn multi-system multi-user node.js clouds, on your own hardware and/or with 3rd party virtual servers",
+	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
 	"version": "0.0.2",
-	"author": "Tolsma Telematica Consultancy <code at tolsma.net>, Sander Tolsma <sander at tolsma.net>",
+	"author": "Tolsma Telematica Consultancy <code@tolsma.net>",
+	"maintainers": [
+		"stolsma <code@tolsma.net>"
+	],
+	"contributers": [
+	],
+	"licenses": [{
+		"type": "MIT"
+	}],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/stolsma/apiary"
 	},
-	"keywords": ["distributed", "cloud computing", "automated deployment", "platform-as-a-service"],
 	"dependencies": {
 		"async": "0.1.x",
 		"clip": "git://github.com/stolsma/clip.git#nconf",
@@ -15,15 +23,13 @@
 		"daemon": "0.3.x >=0.3.2",
 		"dnode": "0.7.x",
 		"eventemitter2": "0.4.x",
-		"eyes": "0.1.x",
-		"forever": "0.6.x",
-		"haibu": "0.4.x >=0.4.4",
-		"haibu-carapace": "0.2.x >=0.2.4",
+		"forever": "0.7.x",
+		"haibu": "0.5.x",
+		"haibu-carapace": "0.2.x >=0.2.7",
 		"http-proxy": "0.7.x",
 		"intercom": "0.2.x >=0.2.3",
 		"mkdirp": "0.0.x",
 		"nconf": "git://github.com/stolsma/nconf.git#get-patch",
-		"optimist": "0.2.x",
 		"rimraf": "1.0.x",
 		"winston": "0.5.x"
 	},
