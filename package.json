@@ -22,7 +22,7 @@
 		"http-proxy": "0.7.x",
 		"intercom": "0.2.x >=0.2.3",
 		"mkdirp": "0.0.x",
-		"nconf": "0.4.x",
+		"nconf": "git://github.com/stolsma/nconf.git#get-patch",
 		"optimist": "0.2.x",
 		"rimraf": "1.0.x",
 		"winston": "0.5.x"
