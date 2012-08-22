@@ -7,7 +7,7 @@
 	"maintainers": [
 		"stolsma <code@tolsma.net>"
 	],
-	"contributers": [
+	"contributors": [
 	],
 	"licenses": [{
 		"type": "MIT"
@@ -20,12 +20,12 @@
 		"async": "0.1.x",
 		"clip": "git://github.com/stolsma/clip.git#nconf",
 		"colors": "0.5.x",
-		"daemon": "0.3.x >=0.3.2",
 		"dnode": "0.7.x",
 		"eventemitter2": "0.4.x",
 		"forever": "0.10.x",
 		"haibu": "0.9.x",
 		"haibu-carapace": "0.7.x",
+		"http-proxy": "0.8.x",
 		"intercom": "0.4.x",
 		"mkdirp": "0.0.x",
 		"nconf": "git://github.com/stolsma/nconf.git#get-patch",
@@ -37,6 +37,6 @@
 		"apiary": "./bin/apiary"
 	},
 	"engines": {
-		"node": "0.4.x"
+		"node": "0.8.x || 0.9.x"
 	}
 }
