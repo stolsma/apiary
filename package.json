@@ -26,7 +26,7 @@
 		"haibu": "0.9.x",
 		"haibu-carapace": "0.7.x",
 		"http-proxy": "0.8.x",
-		"intercom": "0.4.x",
+		"intercom": "0.5.x",
 		"mkdirp": "0.0.x",
 		"nconf": "0.6.x",
 		"rimraf": "1.0.x",
