@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var apiaryCli = require('../lib/cli/index-new');
+var apiaryCli = require('../lib/cli');
 
 // start the CLI application and runs the specified command.
 apiaryCli.start(function (err) {
