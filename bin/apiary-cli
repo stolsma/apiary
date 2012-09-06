@@ -1,3 +1,23 @@
 #!/usr/bin/env node
 
-require('../lib/cli/index-new');
+var apiaryCli = require('../lib/cli/index-new');
+
+// start the CLI application and runs the specified command.
+apiaryCli.start(function (err) {
+  if (!err) {
+    apiaryCli.log.info('Apiary'.grey + ' ok'.green.bold);
+  }
+
+  process.stdout.on('drain', function () {
+    process.exit(err ? 1 : 0);
+  });
+
+  function onexit (/* code, status */) {
+    if (err) {
+      process.removeListener('exit', onexit);
+      process.exit(1);
+    }
+  }
+
+  process.on('exit', onexit);
+});
