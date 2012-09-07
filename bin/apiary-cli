@@ -4,10 +4,6 @@ var apiaryCli = require('../lib/cli');
 
 // start the CLI application and runs the specified command.
 apiaryCli.start(function (err) {
-  if (!err) {
-    apiaryCli.log.info('Apiary'.grey + ' ok'.green.bold);
-  }
-
   process.stdout.on('drain', function () {
     process.exit(err ? 1 : 0);
   });
